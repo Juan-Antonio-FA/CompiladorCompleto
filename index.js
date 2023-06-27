@@ -22,6 +22,7 @@ function switchOption(option) {
         console.log(buffer);
         buffer.push('$');
       }
+      
        if(validate(buffer)){
         console.log("✅Cadena reconocida✅");
       }

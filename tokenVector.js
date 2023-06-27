@@ -21,7 +21,7 @@ export function GenerateTokenVector(word) {
   //delete spaces in word
   /* word = word.replace(/\s/g, ""); */
   //Palabras reservadas
-  let reservedWords = ["float", "int", "char","void","functions","variables", "asignacion"];
+  let reservedWords = ["float", "int", "char","void","function","variables", "asignacion"];
   let token = [];
   let simbol = [];
   let number = "";
@@ -81,10 +81,17 @@ export function GenerateTokenVector(word) {
         identificador += currentSymbol;
         if (nextNextState != "q5") {
           if (reservedWords.includes(identificador)) {
+            if(identificador=="function"){
+              simbol.push(identificador);
+              token.push("function");
+              identificador = "";
+              break;
+            }else{
             simbol.push(identificador);
-            token.push("Reservada");
+            token.push("palabrareservada");
             identificador = "";
             break;
+            }
           } else {
           simbol.push(identificador);
           token.push("id");

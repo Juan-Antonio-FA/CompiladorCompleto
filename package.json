@@ -8,6 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "nearley": "^2.20.1",
+    "pegjs": "^0.10.0",
     "prompt-sync": "^4.2.0"
   },
   "scripts": {
