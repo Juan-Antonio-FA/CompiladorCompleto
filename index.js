@@ -96,7 +96,7 @@ function switchOption(option) {
 }
 function menu() {
   console.log("Menu");
-  console.log("1. Cargar el archivo del codigo");
+  console.log("1. Compile previously loaded file");
   console.log("2. Exit");
   console.log("\n==================================");
 }
@@ -107,6 +107,7 @@ function main() {
     menu();
     console.log("\n");
     option = prompt("Select an option:");
+    console.log("\n");
     console.log(`Your option is ${option}`);
     switchOption(option);
   } while (option != 2);
