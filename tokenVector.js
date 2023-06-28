@@ -15,13 +15,12 @@ function readFile(filename) {
 export function GenerateTokenVector(word) {
   newADF = readFile(filename);
   let alphabet = newADF.alphabet;
-  let states = newADF.states;
   let initialState = newADF.initialState;
   let transitionsTable = newADF.transitionsTable;
   //delete spaces in word
   /* word = word.replace(/\s/g, ""); */
   //Palabras reservadas
-  let reservedWords = ["float", "int", "char","void","function","variables", "asignacion"];
+  let reservedWords = ["float", "int", "char","function","variables", "asignacion"];
   let token = [];
   let simbol = [];
   let number = "";
@@ -86,13 +85,27 @@ export function GenerateTokenVector(word) {
               token.push("function");
               identificador = "";
               break;
-            }else{
+            }
+            else if(identificador=="variables"){
+              simbol.push(identificador);
+              token.push("variables");
+              identificador = "";
+              break;
+            }
+            else if(identificador=="asignacion"){
+              simbol.push(identificador);
+              token.push("asignacion");
+              identificador = "";
+              break;
+            }
+            else{
             simbol.push(identificador);
             token.push("palabrareservada");
             identificador = "";
             break;
             }
-          } else {
+          } 
+          else {
           simbol.push(identificador);
           token.push("id");
           identificador = "";
@@ -155,11 +168,14 @@ export function GenerateTokenVector(word) {
         token.push(",");
 
         break;
+     /*  case "q16":
+        simbol.push(currentSymbol);
+        token.push("\n");
+        break; */
       default:
         break;
     }
     currentState = nextState;
   }
-  console.log(simbol);
   return token;
 }
