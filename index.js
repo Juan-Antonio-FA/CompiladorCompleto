@@ -7,6 +7,10 @@ let buffer=[];
 const prompt = promptSync()
 let lastReadIndex = 0;
 let codeToProcess = '';
+let verify1='';
+let verify2='';
+let verify3='';
+
 
 function readFileAndRemoveNewlines() {
   try {
@@ -50,39 +54,42 @@ function switchOption(option) {
       for(let i=0;i<buffer2.length;i++){
         if(buffer2[i]==reserved[0]){
           if(validate(buffer,reserved[0])){
-            console.log("✅Compilación exitosa✅");
+            verify1="✅Compilación exitosa✅";
           }
           else{
             if(buffer!=0){
-              console.log("🛑Falló la compilación🛑");
+              console.log("🛑Falló la compilación en la parte 1🛑");
             }
             
           }
         }
         else if(buffer2[i]==reserved[1]){
            if(validate(buffer,reserved[1])){
-            console.log("✅Compilación exitosa✅");
+            verify2="✅Compilación exitosa✅";
           }
           else{
             if(buffer!=0){
-              console.log("🛑Falló la compilación🛑");
+              console.log("🛑Falló la compilación en la parte 2🛑");
             }
             
           } 
         }
         else if(buffer2[i]==reserved[2]){
            if(validate(buffer,reserved[2])){
-            console.log("✅Compilación exitosa✅");
+            verify3="✅Compilación exitosa✅";
           }
           else{
             if(buffer!=0){
-              console.log("🛑Falló la compilación🛑");
+              console.log("🛑Falló la compilación en la parte 3🛑");
             }
             
           } 
         }
         if(i<buffer2.length-1){
           buffer=GenerateTokenVector(readFileAndRemoveNewlines());
+        }
+        if(verify1=="✅Compilación exitosa✅" && verify3=="✅Compilación exitosa✅" && verify2=="✅Compilación exitosa✅"){
+          console.log("✅Compilación exitosa✅");
         }
       }
       break;
@@ -115,4 +122,3 @@ function main() {
 
 
 main();
- 

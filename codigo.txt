@@ -5,7 +5,7 @@ luxz(o,p);
 
 variables{
 int x,y,j,z;
-float r,s,t;
+float r,s,l,k;
 char w;
 };
 
@@ -15,5 +15,5 @@ z=loop(id);
 r=dark(rust,p);
 s=lop(int s,l);
 l=fat(int l,int w);
-z=lola(int e,w, float e);
+k=lola(int e,w, float e);
 };
