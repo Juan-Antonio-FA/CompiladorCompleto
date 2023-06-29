@@ -33,6 +33,8 @@ function readFileAndRemoveNewlines() {
   
   return codeToProcess;
 }
+buffer=GenerateTokenVector(readFileAndRemoveNewlines());
+
 function readFileAndRemoveNewlines2() {
   try {
     const content = fs.readFileSync('codigo.txt', 'utf-8');
@@ -43,7 +45,6 @@ function readFileAndRemoveNewlines2() {
     console.error('Error al leer el archivo:', error);
   }
 }
-buffer=GenerateTokenVector(readFileAndRemoveNewlines());
 
 function switchOption(option) {
   const reserved = ["function","variables","asignacion"];
@@ -88,7 +89,8 @@ function switchOption(option) {
         if(i<buffer2.length-1){
           buffer=GenerateTokenVector(readFileAndRemoveNewlines());
         }
-        if(verify1=="✅Compilación exitosa✅" && verify3=="✅Compilación exitosa✅" && verify2=="✅Compilación exitosa✅"){
+        if(verify1=="✅Compilación exitosa✅" && verify3=="✅Compilación exitosa✅"
+         && verify2=="✅Compilación exitosa✅"){
           console.log("✅Compilación exitosa✅");
         }
       }

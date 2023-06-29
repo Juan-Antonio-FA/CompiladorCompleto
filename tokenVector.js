@@ -168,10 +168,6 @@ export function GenerateTokenVector(word) {
         token.push(",");
 
         break;
-     /*  case "q16":
-        simbol.push(currentSymbol);
-        token.push("\n");
-        break; */
       default:
         break;
     }

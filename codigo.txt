@@ -1,19 +1,20 @@
 function{
 loop(int r, float k);
 luxz(o,p);
+l(e,e,r,t);
+p(int a, int b, c, d, f, g);
 };
 
 variables{
-int x,y,j,z;
-float r,s,l,k;
-char w;
+int x,y,j,z,m,r;
+int a,b,c,d,f,g;
+float e,r,t;
 };
 
 asignacion{
+r=(int r, kz,ld);
 x=123;
 z=loop(id);
-r=dark(rust,p);
-s=lop(int s,l);
-l=fat(int l,int w);
-k=lola(int e,w, float e);
+k=luxz(int e, float e);
+
 };
